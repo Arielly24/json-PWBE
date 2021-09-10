@@ -1,6 +1,6 @@
 function showModal(){
-    document.querySelector(".mofal-form").style.display = "flex";
+    document.querySelector(".modal-form").style.display = "flex";
 }
 
-document.getElementsById("btmAddFuncionario")
+document.querySelector(".btnAddFuncionario")
 .addEventListener("click", showModal)

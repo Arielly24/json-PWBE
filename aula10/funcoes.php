@@ -1,32 +1,28 @@
 <?php
 
+//recebe o nome do arquivo
+
 function lerArquivo($nomeArquivo){
-
+    //le o arquivo como string
     $arquivo = file_get_contents($nomeArquivo);
+    
+    //transforma string em array
+    $jsonArray = json_decode($arquivo);
 
-    $arquivoArr = json_decode($arquivo);
-
-    return $arquivoArr;
-
+    //deolve o array
+    return $jsonArray;
 }
-
-function buscarFuncionario($funcionarios, $filtro){
+//busca o funcionario dentro da lista e devolve uma lista com funcionarios encontrados
+function buscarFuncionario ($funcionarios, $first_name){
 
     $funcionariosFiltro = [];
-
-    foreach($funcionarios as $funcionario){
-        if(
-            strpos($funcionario->first_name, $filtro) !== false
-            || 
-            strpos($funcionario->last_name, $filtro) !== false
-            ||
-            strpos($funcionario->department, $filtro) !== false
-        ){
-            $funcionariosFiltro[] = $funcionario;
+    foreach ($funcionarios as $funcionario){
+    if($funcionario -> first_name == $first_name){
+    $funcionariosFiltro[] = $funcionario;
         }
-    }
 
-    return $funcionariosFiltro;
+    }
+ return $funcionariosFiltro;
 
 }
 
