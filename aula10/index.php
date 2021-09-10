@@ -42,8 +42,8 @@ if(isset($_GET["filtro"]) && $_GET["filtro"] != ""){
         Cadastrar
       </button>
     </form>
-    <form class="modal-form">
-        <h1>Adicionar um funcionário</h1>
+    <form class="modal-form" method="POST" action="acoes.php">
+        <h1>Adicionar um funcionário:</h1>
         <input type="text" placeholder="Digite o id" name="id" />
         <input type="text" placeholder="Digite o primeiro nome" name="first_name" />
         <input type="text" placeholder="Digite o sobrenome" name="last_name" />
